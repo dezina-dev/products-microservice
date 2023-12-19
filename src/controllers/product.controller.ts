@@ -104,8 +104,6 @@ const deleteProduct = async (req: Request, res: Response) => {
 
     // Delete the product from the database
     const deletedProduct = await Product.findByIdAndDelete(productId);
-    console.log('deletedProduct', deletedProduct)
-
     if (!deletedProduct) {
       return res.status(404).json({ message: 'Product not found' });
     }
